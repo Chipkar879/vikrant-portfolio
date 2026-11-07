@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import WaveSweep from "./WaveSweep";
 
 export default function Atmosphere() {
   const ref = useRef<HTMLDivElement>(null);
@@ -48,10 +49,7 @@ export default function Atmosphere() {
             "radial-gradient(500px circle at var(--mx) var(--my), rgba(34,211,238,0.10), transparent 60%)",
         }}
       />
-      <div
-        className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-cyan/10 to-transparent"
-        style={{ animation: "scan 9s linear infinite" }}
-      />
+      <WaveSweep />
     </div>
   );
 }

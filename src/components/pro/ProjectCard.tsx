@@ -1,10 +1,21 @@
 import type { Project } from "@/content/types";
 import SpotlightCard from "./SpotlightCard";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export default function ProjectCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index?: number;
+}) {
   return (
     <SpotlightCard>
-      <article className="flex h-full flex-col p-7">
+      <article className="relative flex h-full flex-col p-7">
+        {index !== undefined && (
+          <span className="pointer-events-none absolute right-6 top-3 font-display text-7xl font-bold text-white/[0.04]">
+            0{index + 1}
+          </span>
+        )}
         <p className="text-xs uppercase tracking-[0.25em] text-cyan">
           {project.period}
         </p>
