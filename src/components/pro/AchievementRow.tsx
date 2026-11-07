@@ -12,12 +12,14 @@ const labels: Record<Achievement["category"], string> = {
 
 export default function AchievementRow({ item }: { item: Achievement }) {
   return (
-    <li className="flex flex-col gap-2 border-b border-white/10 py-5 sm:flex-row sm:items-baseline sm:gap-6">
+    <li className="group flex flex-col gap-2 border-b border-white/10 px-2 py-5 transition-all duration-300 hover:bg-white/[0.04] hover:pl-5 sm:flex-row sm:items-baseline sm:gap-6">
       <span className="w-24 shrink-0 font-display text-sm text-cyan">
         {item.year}
       </span>
       <div className="flex-1">
-        <p className="font-medium">{item.title}</p>
+        <p className="font-medium transition-colors group-hover:text-cyan">
+          {item.title}
+        </p>
         {item.description && (
           <p className="mt-1 text-sm text-muted">{item.description}</p>
         )}

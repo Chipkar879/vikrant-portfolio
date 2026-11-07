@@ -1,5 +1,6 @@
 import Nav from "@/components/pro/Nav";
 import Footer from "@/components/pro/Footer";
+import Atmosphere from "@/components/pro/Atmosphere";
 
 export default function ProLayout({
   children,
@@ -8,8 +9,9 @@ export default function ProLayout({
 }) {
   return (
     <div className="flex min-h-screen flex-col">
+      <Atmosphere />
       <Nav />
-      <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
+      <main className="mx-auto w-full max-w-5xl flex-1 px-6 pb-16 pt-32">
         {children}
       </main>
       <Footer />
